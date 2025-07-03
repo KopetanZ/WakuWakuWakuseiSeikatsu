@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>惑星開拓課長の憂鬱</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>🚀 惑星開拓課長の憂鬱</h1>
+            <div class="story-intro" id="storyIntro">
+                <p>西暦2157年、地球からの甘い誘いに騙されて惑星ケプラー442bに来てしまったあなた。</p>
+                <p>「毎日BBQのリゾート生活」のはずが、実は<strong>惑星開拓責任者</strong>に任命されていた！</p>
+                <p><strong>3年以内</strong>に自給自足コロニーを建設しないと、地球からの補給が打ち切られる...</p>
+                <button onclick="startGame()">開拓を始める (泣)</button>
+            </div>
+        </header>
+
+        <main class="game-main" id="gameMain" style="display: none;">
+            <div class="status-panel">
+                <div class="timer">
+                    <h3>⏰ 残り日数</h3>
+                    <div class="countdown" id="countdown">1095</div>
+                    <small>日 (地球からの最終補給便まで)</small>
+                </div>
+                
+                <div class="resources">
+                    <h3>📊 リソース状況</h3>
+                    <div class="resource-item">
+                        <span>⚡ エネルギー:</span>
+                        <span id="energy">100</span>
+                    </div>
+                    <div class="resource-item">
+                        <span>🍖 食料:</span>
+                        <span id="food">50</span>
+                    </div>
+                    <div class="resource-item">
+                        <span>⛏️ 鉱物:</span>
+                        <span id="minerals">20</span>
+                    </div>
+                    <div class="resource-item">
+                        <span>👥 人員:</span>
+                        <span id="personnel">5</span>
+                    </div>
+                    <div class="resource-item">
+                        <span>😊 士気:</span>
+                        <span id="morale">80</span>%
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-panel">
+                <h3>🎯 行動選択</h3>
+                <div class="actions">
+                    <button class="action-btn" onclick="exploreArea()">
+                        🔍 エリア探索<br>
+                        <small>新しい資源や人員を発見</small>
+                    </button>
+                    <button class="action-btn" onclick="recruitPeople()">
+                        📢 人員募集<br>
+                        <small>コスト: エネルギー20</small>
+                    </button>
+                    <button class="action-btn" onclick="mineResources()">
+                        ⛏️ 資源採掘<br>
+                        <small>コスト: 人員2, エネルギー10</small>
+                    </button>
+                    <button class="action-btn" onclick="buildFacility()">
+                        🏗️ 施設建設<br>
+                        <small>コスト: 鉱物30, 人員5</small>
+                    </button>
+                    <button class="action-btn" onclick="boostMorale()">
+                        🎉 士気向上<br>
+                        <small>コスト: 食料15</small>
+                    </button>
+                </div>
+            </div>
+
+            <div class="progress-panel">
+                <h3>🏆 開拓進捗</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+                <p>コロニー完成度: <span id="progress">0</span>%</p>
+                <div class="facilities" id="facilities">
+                    <p>建設済み施設: なし</p>
+                </div>
+            </div>
+
+            <div class="log-panel">
+                <h3>📝 開拓日誌</h3>
+                <div class="log" id="gameLog">
+                    <p>惑星ケプラー442bに到着。予想以上に荒涼としている...</p>
+                </div>
+            </div>
+        </main>
+
+        <div class="game-over" id="gameOver" style="display: none;">
+            <h2 id="gameOverTitle">結果発表</h2>
+            <p id="gameOverMessage"></p>
+            <button onclick="restartGame()">もう一度挑戦</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
