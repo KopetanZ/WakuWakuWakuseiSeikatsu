@@ -2,19 +2,8 @@
   "name": "planet-colony-manager",
   "version": "1.0.0",
   "description": "惑星開拓課長の憂鬱 - 宇宙開拓シミュレーションゲーム",
-  "main": "index.html",
-  "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'Static build complete'",
-    "deploy": "vercel --prod"
-  },
-  "keywords": [
-    "game",
-    "simulation",
-    "space",
-    "colony",
-    "management"
-  ],
+  "scripts": {},
+  "keywords": ["game", "simulation", "space", "colony", "management"],
   "author": "AI Assistant",
   "license": "MIT"
 }
